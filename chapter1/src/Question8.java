@@ -1,3 +1,4 @@
+// 8. List the name of all employees whose first name starts with the letter ‘A’.
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +20,7 @@ public class Question8 {
             return;
         }
 
-        String query = "SELECT ProductName FROM products where Price>90";
+        String query = "SELECT Firstname, LastName FROM employees where FirstName like 'A%'";
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Statement stmt = conn.createStatement();
@@ -28,8 +29,9 @@ public class Question8 {
             System.out.println("database is connected successfully");
             while (rs.next()) {
                 // use column label or index
-                String ProductName = rs.getString("ProductName");
-                System.out.println("ProductName: " + ProductName);
+                String FirstName = rs.getString("FirstName");
+                String LastName = rs.getString("LastName");
+                System.out.println("FirstName: " + FirstName + " | LastName: " + LastName);
             }
         } catch (SQLException e) {
             System.out.println("SQL Error: " + e.getMessage());

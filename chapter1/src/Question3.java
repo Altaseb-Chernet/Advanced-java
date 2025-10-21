@@ -1,3 +1,5 @@
+// 3. Get the price of an order (by multiplying unit price by quantity) from Order Details.
+
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;

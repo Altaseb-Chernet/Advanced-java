@@ -1,3 +1,4 @@
+//  4. Display all cities that employees belong to but don’t allow repetition. 
 
 import java.sql.Connection;
 import java.sql.DriverManager;

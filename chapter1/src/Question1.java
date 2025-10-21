@@ -1,3 +1,5 @@
+//  1.Get Order id, Product id, Unit price from Order Details.
+
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;

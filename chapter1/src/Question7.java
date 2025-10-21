@@ -1,3 +1,4 @@
+//  7. Display product name whose unit price are greater than 90$. 
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +20,7 @@ public class Question7 {
             return;
         }
 
-        String query = "SELECT CustomerName FROM customers where City='London'";
+        String query = "SELECT ProductName FROM products where Price>90";
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Statement stmt = conn.createStatement();
@@ -28,8 +29,8 @@ public class Question7 {
             System.out.println("database is connected successfully");
             while (rs.next()) {
                 // use column label or index
-                String CustomerName = rs.getString("CustomerName");
-                System.out.println("CustomerName: " + CustomerName);
+                String ProductName = rs.getString("ProductName");
+                System.out.println("ProductName: " + ProductName);
             }
         } catch (SQLException e) {
             System.out.println("SQL Error: " + e.getMessage());

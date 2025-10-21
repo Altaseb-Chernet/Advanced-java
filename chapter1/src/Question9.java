@@ -1,3 +1,4 @@
+// 9. In Customer table, display all cities that ends with the letter ‘a’. 
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +20,7 @@ public class Question9 {
             return;
         }
 
-        String query = "SELECT Firstname, LastName FROM employees where FirstName like 'A%'";
+        String query = "SELECT city FROM customers where city like '%a'";
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Statement stmt = conn.createStatement();
@@ -28,9 +29,8 @@ public class Question9 {
             System.out.println("database is connected successfully");
             while (rs.next()) {
                 // use column label or index
-                String FirstName = rs.getString("FirstName");
-                String LastName = rs.getString("LastName");
-                System.out.println("FirstName: " + FirstName + " | LastName: " + LastName);
+                String city = rs.getString("city");
+                System.out.println("city: " + city );
             }
         } catch (SQLException e) {
             System.out.println("SQL Error: " + e.getMessage());

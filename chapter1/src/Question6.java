@@ -1,3 +1,4 @@
+// 6. Display complete name of employees those lives in London.
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -5,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Question10 {
+public class Question6 {
 
     static String url = "jdbc:mysql://localhost:3306/northwind";
     static String user = "root";
@@ -19,7 +20,7 @@ public class Question10 {
             return;
         }
 
-        String query = "SELECT city FROM customers where city like '%a'";
+        String query = "SELECT CustomerName FROM customers where City='London'";
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Statement stmt = conn.createStatement();
@@ -28,8 +29,8 @@ public class Question10 {
             System.out.println("database is connected successfully");
             while (rs.next()) {
                 // use column label or index
-                String city = rs.getString("city");
-                System.out.println("city: " + city );
+                String CustomerName = rs.getString("CustomerName");
+                System.out.println("CustomerName: " + CustomerName);
             }
         } catch (SQLException e) {
             System.out.println("SQL Error: " + e.getMessage());
