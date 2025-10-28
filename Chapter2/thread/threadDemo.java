@@ -30,13 +30,13 @@ class Hi extends Thread {
     Hello objHello = new Hello();
     objhHi.setPriority(Thread.MAX_PRIORITY);
     objHello.setPriority(Thread.MAX_PRIORITY);
-    
+
     System.out.println("Priority of hi thread: "+objhHi.getPriority());
     System.out.println("Priority of hello thread: "+objHello.getPriority());
 
     objhHi.start();
     try{
-        objhHi.sleep(2);
+        Thread.sleep(2);
     }catch(InterruptedException e){
         e.printStackTrace();
     }
